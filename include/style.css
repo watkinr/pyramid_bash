@@ -1,0 +1,135 @@
+
+
+
+body{
+	
+	background-image:url('background.jpg');	
+	color: #FFFFFF;
+}
+
+body a{
+	
+	text-decoration: none;
+	
+}
+
+
+#mainContainer{
+	
+    width: 100%;	         
+    min-height: 300px; 
+    text-align: center;
+}
+
+/*  
+ - menuAndOtherStuff is the div for the menu, canvas, gameplay directions, and high scores. 
+*/
+#menuAndOtherStuff{
+	margin: 0 auto;
+	margin-top: 40px;
+	width: 1000px;
+	height: 700px;
+}
+
+#menuAndOtherStuff canvas{
+	
+	float: left;
+	margin-left: 20px;
+	background-color: #FFFFFF;
+		
+}
+/*  
+  - menu div
+*/
+
+
+#menu{
+	
+	float: left;
+	width: 220px;
+	margin-left: 20px;
+}
+
+#menu div{
+	margin-top: 90 px;
+	height: 90px;
+	text-align: center;
+	color: #00FF00;
+	vertical-align: middle;
+	line-height: 90px; 
+	
+}
+
+#menu div:hover{
+	
+	background-color: #00FF00;
+	color: #FF0000;
+}
+
+
+
+#menu h1:hover{
+	
+	
+	
+}
+
+
+#menu div{
+	
+	margin-top: 50px;
+	margin-bottom: 20px;
+	
+}
+
+#gamePlayAndScores{
+	
+	float: left;
+	margin-left: 20px;
+	width: 650px;
+}
+
+#gamePlayAndScores ul li{
+	
+	text-align: left;
+	list-style-type: none;
+	
+}
+
+#userList{
+	
+	float: left;
+	margin-left: 25px;
+	
+}
+
+#userScores{
+	
+	float: left;
+	margin-left: 75px;
+	
+}
+/*  
+ - div for submitting a high score on te index/game page.  
+*/
+#submitHighScore{
+	
+	margin: 0 auto;
+	width: 1000px;
+	background-color: #0000FF;
+	
+}
+
+#submitScoreDiv{
+
+	visibility: hidden;
+	width:1000px;
+	background-color: #00FFFF;
+	
+}
+
+
+/*  
+- button and text-field to submit a high score.  The button only becomes visible if a game is over 
+*/
+
