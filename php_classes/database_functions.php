@@ -101,6 +101,16 @@ Class DatabaseFunctions{
 			
 		}
 	
+	
+		public function showUserScore(){
+			
+			if(!$this->getUserName()){
+				
+				echo "<h2>Your score : " . $this->getScore() . "</h2><br/>";
+				
+			}
+			
+		}
 	}
 
 

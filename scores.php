@@ -46,6 +46,8 @@
 					<ul id="userScores">
 						
 						<?php $data->grabTopScores(); ?>
+						<?php $data->showUserScore(); ?>
+						
 						
 					</ul>
 				
