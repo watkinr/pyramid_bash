@@ -86,9 +86,19 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             
             game.runGameOverScreen();
-              
-            document.getElementById("submitHidden").value = game.score;
-            document.getElementById("userheading").style.visibility="visible";
+            
+            
+            if(!hideStuffIfSubmitted){
+            	
+            	document.getElementById("submitHidden").value = game.score;
+           	    document.getElementById("userheading").style.visibility="visible";
+            	
+            }  else {
+            	
+            	hideEverything();
+            	
+            }
+            
             
             game.resetAll();
             

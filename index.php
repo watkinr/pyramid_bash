@@ -2,8 +2,6 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-
-
 		<title>Welcome to Pyramid Bash!</title>
 		<link rel="stylesheet" href="include/style.css">
 
@@ -41,15 +39,35 @@
 							
 													<input id="submitHidden" type="hidden" name="score" value="" />
 							
-						<h1 id="userheading">Submit Your UserName :	<input type="text" size="30" name="username" />
+						<h1 id="userheading">Submit Your UserName :	<input type="text" id="usernameText" size="30" name="username" />
 							
-													<input type="submit" value="Enter Score" 
+													<input type="submit" id="submitButton" onclick="flipHideFlag()" value="Enter Score" 
 													
 													/>
 									
 						</h1>
 													
 						</form>
+					
+			<script type="text/javascript">
+		//minor script to hide user input when/if they submit a form
+		
+		
+		
+		var hideStuffIfSubmitted = false;
+		
+		function flipHideFlag(){
+			hideStuffIfSubmitted = true;
+			console.log("flag : " + hideStuffIfSubmitted);
+		}
+		
+		function hideEverything() { 
+					 document.getElementById("submitScoreDiv").visibility="hidden";
+				   	 document.getElementById("usernameText").visibility="hidden";
+				   	 document.getElementById("submitButton").visibility="hidden";
+				   	 document.getElementById("userheading").visibility="hidden";
+		} ;	
+	</script>
 					
 					
 				</div>

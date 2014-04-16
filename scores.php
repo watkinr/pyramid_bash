@@ -18,11 +18,6 @@
 
 	</head>
 	
-	<script>
-		//minor script to hide user input when/if they submit a form
-		function() { document.getElementById("submitScoreDiv").visibility="hidden";  } ();		
-	</script>
-	
 
 	<body>
 		<div id="mainContainer">			
