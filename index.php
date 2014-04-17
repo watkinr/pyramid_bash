@@ -4,7 +4,6 @@
 		<meta charset="utf-8" />
 		<title>Welcome to Pyramid Bash!</title>
 		<link rel="stylesheet" href="include/style.css">
-
 	</head>
 
 	<body>
@@ -18,14 +17,21 @@
 				
 				<canvas id="canvas" width="650" height="650"></canvas>
 				
-				<?php require_once 'include/gamescripts.php'; ?>
-				
 				<div style="clear: both;"></div>
 			</div>
 			<!-- Insert game script here -->
+		<script src="js_game/utils.js"></script>
+		<script src="js_game/splashLetter.js"></script>
+		<script src="js_game/gameOver.js"></script>
+		<script src="js_game/pyramid.js"></script>
+		<script src="js_game/defender.js"></script>
+		<script src="js_game/grid.js"></script>
+		<script src="js_game/vector.js"></script>
+		<script src="js_game/game.js"></script>
+		<script src="js_game/attributes.js"></script>
+		<script src="js_game/movement_controls.js"></script>
 				
-			<?php require_once 'include/game_controls.php'; ?>
-
+		<?php require_once'include/game_controls.php'; ?>
 			<!-- end game script -->			
 			<div id="submitHighScore">
 				
