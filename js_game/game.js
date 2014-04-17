@@ -101,7 +101,7 @@ Game.prototype.rebootVectorScorePoints = function(theVector){
 //speeds up, overall timer is reset.
 Game.prototype.checkToLevelUp = function(){
     
-    if(this.levelScore > 9 && this.level < 14){
+    if(this.levelScore > 9 && this.level < 16){
         
         this.level += 1;
         this.levelScore = 0;

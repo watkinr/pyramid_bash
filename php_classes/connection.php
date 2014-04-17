@@ -1,7 +1,7 @@
 <?php
 
 DEFINE('DBUSER', 'root');
-DEFINE('DBPASS', 'Mastermind10');
+DEFINE('DBPASS', 'g0disan4sshole');
 DEFINE('DBHOST', 'localhost');
 DEFINE('DBNAME', 'PYRAMID_BASH');
 

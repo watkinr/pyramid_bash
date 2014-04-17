@@ -104,7 +104,7 @@ Class DatabaseFunctions{
 	
 		public function showUserScore(){
 			
-			if(!$this->getUserName()){
+			if($this->score > 0){
 				
 				echo "<h2>Your score : " . $this->getScore() . "</h2><br/>";
 				

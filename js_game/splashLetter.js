@@ -96,6 +96,7 @@ SplashLetter.prototype.insertText = function(){
     
    // this.context.beginPath();
     this.context.fillText("pyramid", 25, 100);
+    this.context.fillText("By Mikey K.", 25, 400);
     this.context.stroke();
 };
 

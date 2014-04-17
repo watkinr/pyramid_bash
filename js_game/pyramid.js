@@ -202,17 +202,16 @@ Pyramid.prototype.checkColors = function(theDefender){
 //Example: vector 0 (bottom left vector): pyramids spin to the bottom left corner.
 Pyramid.prototype.killPyramid = function(){
     
+	var killSpeed = 8;
+
     if(this.isDefeated){
          
         switch(this.vector){
             
             case 0:
                               
-                this.x -= 10;
-                this.y += 10;       
-                
-                this.frontTipX -= 10;
-                this.frontTipY += 10;
+                this.x -= killSpeed;
+                this.y += killSpeed;
             
                 break; 
             
@@ -220,74 +219,53 @@ Pyramid.prototype.killPyramid = function(){
             case 1:
              
                
-                this.x -= 10;
-                this.y -= 10;
-        
-                this.frontTipX -= 10;
-                this.frontTipY -= 10;
+                this.x -= killSpeed;
+                this.y -= killSpeed;
                 
                 break;
                 
             case 2:
              
                
-                this.x -= 10;
-                this.y -= 10;
-        
-                this.frontTipX -= 10;
-                this.frontTipY -= 10;
+                this.x -= killSpeed;
+                this.y -= killSpeed;
                 
                 break;    
                 
             case 3:
                          
                
-                this.x += 10;
-                this.y -= 10;
-        
-                this.frontTipX += 10;
-                this.frontTipY -= 10;
+                this.x += killSpeed;
+                this.y -= killSpeed;
                 
                 break;
                 
            case 4:
                          
                
-                this.x += 10;
-                this.y -= 10;
-        
-                this.frontTipX += 10;
-                this.frontTipY -= 10;
+                this.x += killSpeed;
+                this.y -= killSpeed;
                 
                 break;     
                 
             case 5:
                               
-                this.x += 10;
-                this.y += 10;       
-                
-                this.frontTipX += 10;
-                this.frontTipY += 10;
+                this.x += killSpeed;
+                this.y += killSpeed;       
             
                 break;
             
             case 6:
                               
-                this.x += 10;
-                this.y += 10;       
-                
-                this.frontTipX += 10;
-                this.frontTipY += 10;
+                this.x += killSpeed;
+                this.y += killSpeed;       
             
                 break;
                 
            case 7:
                               
-                this.x -= 10;
-                this.y += 10;       
-                
-                this.frontTipX -= 10;
-                this.frontTipY += 10;
+                this.x -= killSpeed;
+                this.y += killSpeed;       
             
                 break;     
         }
