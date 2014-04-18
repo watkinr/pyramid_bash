@@ -90,8 +90,14 @@
             
             if(!hideStuffIfSubmitted){
             	
-            	document.getElementById("submitHidden").value = game.score;
+            	document.getElementById("scoreText").value = game.score;
+            	document.getElementById("userScore").style.visibility="visible";
+            	document.getElementById("userScore").innerHTML = "Your Score : " + game.score;
+            	document.getElementById("scoreText").style.visibility="visible";
            	    document.getElementById("userheading").style.visibility="visible";
+           	    document.getElementById("submitButton").style.visibility="visible";
+           	    
+           	    
             	
             }  else {
             	

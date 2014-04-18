@@ -1,3 +1,10 @@
+<?php  
+
+session_start();
+$_SESSION['submitKey'] = md5(uniqid()); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -41,18 +48,16 @@
 					
 					
 						
-						<form action="scores.php" method="REQUEST">
+						<form action="scores.php" method="POST">
 							
-													<input id="submitHidden" type="hidden" name="score" value="" />
-							
-						<h1 id="userheading">Submit Your UserName :	<input type="text" id="usernameText" size="30" name="username" />
-							
-													<input type="submit" id="submitButton" onclick="flipHideFlag()" value="Enter Score" 
 													
-													/>
-									
-						</h1>
-													
+							
+						<h1 id="userheading">Submit Your UserName :	<input type="text" id="usernameText" size="30" name="username" /></h1>
+																	<input type="hidden" id="scoreText" name="score"  />
+																	<input type="hidden" name="submitted" value="submitted" />
+						<h1 id="userScore"></h1>
+						<input type="submit" id="submitButton" onclick="flipHideFlag()" value="Enter Score"/>						
+						
 						</form>
 					
 			<script type="text/javascript">
@@ -77,8 +82,8 @@
 					
 					
 				</div>
+				
 			</div>
-
 		</div>
 	</body>
 </html>

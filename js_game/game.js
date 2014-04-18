@@ -31,7 +31,7 @@ Game.prototype.resetAll = function(){
     this.level = 1;                                                 //starting level for the game
     this.levelScore = 0;                                            //starting level score for the game.  Resets every 10 points
     this.timer = 0;                                                 //timer to calculate making new pyramids
-    this.generateTimer = 400;                                       //value used to calculate when to make a new pyramid
+    this.generateTimer = 440;                                       //value used to calculate when to make a new pyramid
 
     for(var i = 0; i < this.vectors.length; i++){
         

@@ -4,14 +4,19 @@ Class DatabaseFunctions{
 		
 		private $userName;
 		private $score;
-		
+		private $sessionKey;
 		
 		//constructor sets username and user score variables
-		public function __construct(){
+		public function __construct($theSessionKey){
 			
-			$this->setUserName();
-			$this->setScore();
+			$this->setSessionKey($theSessionKey);
 			
+			if($this->checkTheKeys($theSessionKey) ){
+				
+				$this->setUserName();
+				$this->setScore();
+				
+			}	
 		}
 		
 		//destroys the object once the script has run
@@ -19,19 +24,54 @@ Class DatabaseFunctions{
 			
 		}
 		
+		//setSessionKey grabs the session key to make sure that they match.  If they don't, no protocols are
+		//run on the database to prevent SQL injection and CSRF attacks.
+		
+		public function setSessionKey($theSessionKey){
+			
+			$this->sessionKey = $theSessionKey;
+		}
+		
+		public function checkTheKeys($theSessionKey){
+			
+			if($theSessionKey===$this->sessionKey){
+				
+				//echo"The keys match";
+				return true;
+				
+			} else {
+				
+				//echo "the keys do not match";
+				return false;
+			}
+			
+		}
+		
 		//grabs the username from the form on the index page if a user completes a game and submits their score
 		//uses real excape string to prevent the database query from going crosseyed
 		public function setUserName(){
 			
-			$userName = mysql_real_escape_string($_REQUEST['username']);
+			if(isset($_POST['submitted'] )  ){
+				
+				if(preg_match('%^[A-Za-z0-9_-]{5,30}$%', $_POST['username']) ){
+					
+					$userName = mysql_real_escape_string($_POST['username']);
+					
+					if($userName !== ""){
+				
+						$this->userName = $userName;
+				
+					} else {
+					
+						$this->userName = "blank_user";
 			
-			if($userName !== ""){
+					}
+					//if the user enters a string that is not valid according to the regular expressions
+				} else {
+					
+					$this->userName = "failed_entry";
+				}
 				
-				$this->userName = $userName;
-				
-			} else {
-				
-				$this->userName = "blank User";
 			}	
 					
 		}
@@ -45,18 +85,27 @@ Class DatabaseFunctions{
 		//same as the setUserName function only with the score
 		public function setScore(){
 
-			
-			$score = (int) mysql_real_escape_string($_REQUEST['score']);
-			
-			if($score){
+			if(isset($_POST['submitted'] )  ){
+					
+				if(preg_match('%^[0-9]{1,5}$%', $_POST['score'] ) ){
+					
+					$score = (int) mysql_real_escape_string($_POST['score']);
+					
+					if($score){
 				
-				$this->score = $score;
+						$this->score = $score;
 				
-			} else{
+					} else {
 				
-				$this->score = false;
-			}
+						$this->score = 0;
 			
+					}	
+					//if the regular expression match for the score fails.  The max score is set at 5 digits to prevent an un-authorized
+					//code injection
+				} else {
+					$this->score = 0;
+				}
+			}	
 		}		
 	
 		public function getScore(){
@@ -89,13 +138,14 @@ Class DatabaseFunctions{
 			}
 		}
 	
-		//insert a new row of data if the score is something greater than 0;
+		//insert a new row of data if the score is something greater than 0.  The values are entered in reverse to prevent any type
+		//of SQL injection
 		public function insertNewDataIfNotEmpty(){
 			
-			if($this->userName !== ""){
+			if($this->score > 0){
 					
-					$query = "INSERT INTO LOGGED_SCORES VALUES (NULL, '" . $this->getUserName() . "',  '" . $this->getScore() . 
-					"', CURRENT_TIMESTAMP)" ;
+					$query = "INSERT INTO LOGGED_SCORES (ENTERED_ON, SCORE, USERNAME, ID) VALUES (CURRENT_TIMESTAMP, '" . $this->getScore() . "',  '" . $this->getUserName() . 
+					"', NULL)" ;
 					$executeQuery = mysql_query($query);
 			}
 			

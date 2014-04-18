@@ -1,9 +1,13 @@
 <?php 	
 	require_once 'php_classes/connection.php';
 	require_once 'php_classes/database_functions.php';
+	
+	session_start();
+	$submitKey = $_SESSION['submitKey'];
 
 	$connection = new Connection();
-	$data = new DatabaseFunctions();
+	$data = new DatabaseFunctions($submitKey);
+	
 	$data->insertNewDataIfNotEmpty();
 
 ?>
@@ -21,8 +25,7 @@
 
 	<body>
 		<div id="mainContainer">			
-			
-			<div id="menuAndOtherStuff">
+						<div id="menuAndOtherStuff">
 				
 				<div id="menu">
 					<?php require_once 'include/menu.php'; ?>
@@ -43,7 +46,6 @@
 						<?php $data->grabTopScores(); ?>
 						<?php $data->showUserScore(); ?>
 						
-						
 					</ul>
 				
 					<div style="clear: both;"></div>	
@@ -54,3 +56,4 @@
 		</div>
 	</body>
 </html>
+<?php session_destroy(); ?>
