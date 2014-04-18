@@ -11,7 +11,7 @@ Class DatabaseFunctions{
 			
 			$this->setSessionKey($theSessionKey);
 			
-			if($this->checkTheKeys($theSessionKey) ){
+			if($this->checkTheKeys($theSessionKey) && $_POST['submitted']=="submitted"){
 				
 				$this->setUserName();
 				$this->setScore();
@@ -36,9 +36,16 @@ Class DatabaseFunctions{
 			
 			if($theSessionKey===$this->sessionKey){
 				
-				//echo"The keys match";
-				return true;
+				if(isset($_POST['submitted'])){
+					
+				//	echo "true";
+					return true;
+					
+				}
 				
+				//echo"Post is not set";
+				
+					return false;
 			} else {
 				
 				//echo "the keys do not match";

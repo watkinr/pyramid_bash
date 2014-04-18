@@ -12,7 +12,7 @@
 					
 					<a href="gameplay.php">
 						<div>
-							<h1>GamePlay</h1>
+							<h1>Game Play</h1>
 						</div>
 					</a>
 						
