@@ -40,7 +40,9 @@
 								as you level up.  The game isn't over until the pyramids make it to the center squares.
 						</h2></li>
 						
-						<li><h2>Submit a high score after the game is over.  Good Luck and enjoy!!</h2></li>
+						<li><h2>Submit a high score after the game is over.  User-names have to be at least 2 characters long and please,
+							    don't use any wingdings for your user-name (*,&,^,%,&,@, etc.).  Otherwise, they won't be entered. 
+							    Good Luck and enjoy!!</h2></li>
 					</ul>
 					
 				</div>
