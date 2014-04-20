@@ -49,7 +49,7 @@ Attributes.prototype.selectColor = function(colorSelector){
 //These methods are used by the pyramids to signify when the defender hits the pyramids.
 Attributes.prototype.reachedXBoundary = function(x, boundsX){
     
-    if(  x > (boundsX - 20)  &&   x < (boundsX + 20)   ){
+    if(  x > (boundsX - 25)  &&   x < (boundsX + 25)   ){
         
         return true;
         
@@ -59,7 +59,7 @@ Attributes.prototype.reachedXBoundary = function(x, boundsX){
 
 Attributes.prototype.reachedYBoundary = function(y, boundsY){
     
-    if(  y > (boundsY - 20)  &&   y < (boundsY + 20)   ){
+    if(  y > (boundsY - 25)  &&   y < (boundsY + 25)   ){
         
         return true;
         

@@ -35,6 +35,7 @@ $_SESSION['submitKey'] = md5(uniqid());
 		<script src="js_game/grid.js"></script>
 		<script src="js_game/vector.js"></script>
 		<script src="js_game/game.js"></script>
+		<script src="js_game/background.js"></script>
 		<script src="js_game/attributes.js"></script>
 		<script src="js_game/movement_controls.js"></script>
 				

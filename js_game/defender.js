@@ -12,8 +12,8 @@ function Defender (canvas, context) {
   this.y = 350;                                             //initial Y starting point
   this.frontTipX = (this.x + 20);                           //X coordinate for Defender's front tip
   this.frontTipY = this.y;                                  //Y coordinate for Defender's front tip
-  this.ax = 20;                                             //velocity of Defender's attacking X speed
-  this.ay = 20;                                             //velocity of Defender's attacking Y speed
+  this.ax = 30;                                             //velocity of Defender's attacking X speed
+  this.ay = 30;                                             //velocity of Defender's attacking Y speed
   this.vr = 0;                                              //Rotational velocity.    
   this.originalX = 0;
   this.originalY = 0;  

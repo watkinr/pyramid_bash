@@ -5,6 +5,7 @@ function Game(canvas, context){
     this.grid = new Grid();
     this.context = context;                                         //absorbs the canvas context
     this.canvas = canvas;                                           //absorbs the canvas element
+    this.background = new Background(canvas);
     this.defender = new Defender(canvas, context);
     this.centerX = (this.canvas.width / 2);                         //center X position of canvas
     this.centerY = (this.canvas.height / 2);                        //center Y position of canvas
@@ -43,7 +44,7 @@ Game.prototype.resetAll = function(){
 
 Game.prototype.setFill = function(){
     
-    this.context.fillStyle = "blue";
+    this.context.fillStyle = "black";
     this.context.font = "bold 25px Arial";
                   
 };
@@ -107,6 +108,8 @@ Game.prototype.checkToLevelUp = function(){
         this.levelScore = 0;
         this.timer = 0;
         this.generateTimer -= 20;
+        this.background.onChange = true;
+        this.background.changeTheColors();
     }   
 };
 
@@ -230,6 +233,15 @@ Game.prototype.start = function(){
 Game.prototype.gameActivity = function(theDefender){
         
     if(this.gameIsActive){
+             
+        if(this.level === 1){
+
+            this.background.setInitialBackground(); 
+       
+        } else {
+            
+            this.background.checkAllColors();
+        }
              
         this.drawGrid();
         
