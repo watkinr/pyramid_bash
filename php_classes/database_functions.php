@@ -60,7 +60,7 @@ Class DatabaseFunctions{
 			
 			if(isset($_POST['submitted'] )  ){
 				
-				if(preg_match('%^[A-Za-z0-9_-]2,30}$%', $_POST['username']) ){
+				if(preg_match('%^[A-Za-z0-9-_]{2,30}$%', $_POST['username']) ){
 					
 					$userName = mysql_real_escape_string($_POST['username']);
 					
